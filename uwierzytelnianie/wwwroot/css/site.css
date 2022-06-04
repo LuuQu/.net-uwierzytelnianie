@@ -1,0 +1,28 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.data_display {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2px;
+    padding: 2px;
+}
+
+.form_display {
+    width: 400px;
+}

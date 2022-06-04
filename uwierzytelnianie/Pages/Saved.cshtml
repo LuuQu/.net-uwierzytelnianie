@@ -1,0 +1,42 @@
+﻿@page
+@model SavedModel
+@{
+    ViewData["Title"] = "Historia";
+}
+<h1>@ViewData["Title"]</h1>
+<p>Historia wpisów w bazie danych:</p>
+<div class="data_display">
+ <div>
+<p>Nr ID</p>
+</div>
+<div>
+<p>Imie i Nazwisko</p>
+</div>
+<div>
+<p>Data</p>
+</div>
+    </div>
+<div class="data_display">
+    @foreach (var item in Model.Records)
+    {
+        <div>
+        <p>@item.Id</p>
+        </div>
+        <div>
+        <p>@item.FirstName @item.LastName</p>
+        </div>
+        <div>
+        <p>@item.Date</p>
+        </div>
+        <div>
+        <form method="post">
+        <button type="submit" name="Id" value="@item.Id" class="btn btn-danger">Delete</button>
+        </form>
+        </div>
+    }
+</div>
+@{
+    <div class="alert alert-@ViewData["MessageClass"]">
+            @ViewData["Message"]
+    </div>
+}

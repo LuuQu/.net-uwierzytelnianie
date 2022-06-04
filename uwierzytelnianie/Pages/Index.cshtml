@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="form_display">
+<form method="post">
+  <div>
+    <label>Imię</label><br>
+    <input type="text" name="Name" class="form-control input-group-lg" placeholder="Imie" required>
+  </div><br>
+  <div>
+    <label>Nazwisko</label><br>
+    <input type="text" name="LastName" class="form-control input-group-lg" placeholder="Nazwisko" required>
+  </div><br>
+  <button type="submit" class="btn btn-info">Wyślij</button>
+</form>
+</div>
+@{
+    <div class="alert alert-@ViewData["MessageClass"]">
+            @ViewData["Message"]
+    </div>
+}
