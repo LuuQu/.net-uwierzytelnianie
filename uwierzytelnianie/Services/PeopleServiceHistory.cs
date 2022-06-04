@@ -14,6 +14,10 @@ namespace uwierzytelnianie.Services
         }
         public IQueryable<People> GetAllEntries()
         {
+            if(_context.People.Count() > 20)
+            {
+                return _context.People.OrderByDescending(c => c.Date).Take(20);
+            }
             return _context.People.OrderByDescending(c => c.Date);
         }
         public void AddEntry(string name, string lastName, string id)
